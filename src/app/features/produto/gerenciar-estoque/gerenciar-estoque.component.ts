@@ -51,4 +51,5 @@ export class GerenciarEstoqueComponent implements OnInit {
     confirm('Estoque alterado');
     this.router.navigate(['/produtos/gerenciador-produtos']);
   }
+  
 }

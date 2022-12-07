@@ -56,4 +56,8 @@ export class EditarProdutoComponent implements OnInit {
     }
   }
 
+  public limpar(): void {
+    this.form.reset()
+  }
+
 }

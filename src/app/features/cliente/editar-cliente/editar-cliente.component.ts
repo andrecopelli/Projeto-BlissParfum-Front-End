@@ -49,4 +49,8 @@ export class EditarClienteComponent implements OnInit {
     }
   }
 
+  public limpar(): void {
+    this.form.reset()
+  }
+
 }

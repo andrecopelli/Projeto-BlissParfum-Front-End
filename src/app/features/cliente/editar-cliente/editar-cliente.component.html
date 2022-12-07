@@ -37,7 +37,8 @@
                 </div>
                 
                 <div class="botao m-3">
-                    <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="!form.valid">
+                    <input type="submit" value="Salvar" class="btn btn-primary m-1" [disabled]="!form.valid">
+                    <button class="btn btn-secondary m-1" (click)="limpar()">Limpar</button>
                 </div>
 
             </form>

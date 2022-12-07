@@ -69,4 +69,7 @@ export class CadastrarPedidoComponent implements OnInit {
     }
   }
 
+  public limpar(): void {
+    this.form.reset()
+  }
 }

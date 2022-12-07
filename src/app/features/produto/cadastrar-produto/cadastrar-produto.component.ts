@@ -41,8 +41,12 @@ export class CadastrarProdutoComponent implements OnInit {
       this.produtoService.salvarProduto(novoProduto)
       .pipe(take(1))
       .subscribe(() => {confirm('Produto Salvo')});
-      this.form.reset()
+      this.limpar();
     }
+  }
+
+  public limpar(): void {
+    this.form.reset()
   }
 
 }

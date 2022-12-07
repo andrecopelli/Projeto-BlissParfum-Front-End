@@ -36,10 +36,12 @@ export class CadastrarClienteComponent implements OnInit {
       this.clienteService.salvarCliente(novoCliente)
       .pipe(take(1))
       .subscribe(() => {confirm(`Cliente Salvo`)});
-      this.form.reset()      
+      this.limpar();      
     }
   }
 
-
+  public limpar(): void {
+    this.form.reset()
+  }
 
 }
