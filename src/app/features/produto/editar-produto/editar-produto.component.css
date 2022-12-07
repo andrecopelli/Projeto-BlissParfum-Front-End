@@ -1,0 +1,29 @@
+.icone{
+    font-size: 50px;
+    padding-top: 20px;
+    color: #f5b235;    
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.linha1{
+    display:flex;
+    justify-content: space-between;
+}
+
+.linha2{
+    display: flex;
+    justify-content: space-between;
+}

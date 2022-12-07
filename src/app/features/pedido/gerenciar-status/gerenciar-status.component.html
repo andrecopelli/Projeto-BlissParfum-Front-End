@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">published_with_changes</span>
+            <h2>Atualizar Status</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center text-center mt-4">
+        <div class="col-6">
+            <h2><span>Pedido: </span>{{pedido.idPedido}}</h2>
+            <h2><span>Status Atual: </span>{{pedido.status}}</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-6">
+            <h3 class="text-center mb-5">Selecione o status desejado</h3>
+            <form [formGroup]="form" (ngSubmit)="gerenciarStatus()">
+                <select [disabled]="pedidoFinalizado()" class="form-select" formControlName="status" id="status" [(ngModel)]="pedido.status">
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Em Trânsito">Em Trânsito</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select> 
+                <div class="botao d-flex justify-content-center mt-5">
+                    <input type="submit" value="Salvar" class="btn btn-primary">
+                </div>   
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">manage_accounts</span>
+            <h2>Gerenciar Clientes</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Data de Nascimento</th>
+                        <th>Pontos de Fidelidade</th>
+                        <th>Editar Cliente</th>
+                        <th>Excluir Cliente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes">
+                        <td>{{cliente.idCliente}}</td>
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.cpf}}</td>
+                        <td>{{cliente.dataDeNascimento | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{cliente.pontosFidelidade}}<img class="coin" src="../../../../assets/coin.png" alt=""></td>
+                        <td><button><img class="botao" src="../../../../assets/edit.png" alt="Botão para editar o cliente" (click)="editar(cliente.idCliente)"></button></td>
+                        <td><button><img class="botao" src="../../../../assets/delete.png" alt="Botão para excluiir o cliente" (click)="excluir(cliente.cpf)"></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

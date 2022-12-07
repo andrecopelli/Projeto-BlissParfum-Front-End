@@ -1,0 +1,111 @@
+<!-- HEADER -->
+<mat-toolbar routerLink="">
+  <div class="row texto-logo">
+    <div class="col">
+      <span>BLISS PARFUM<img class="home" src="../assets/home3.png" alt=""> HOME PAGE</span>
+    </div>
+  </div>
+  
+</mat-toolbar>
+
+<!-- MAIN -->
+<mat-sidenav-container>
+  <!-- SIDENAV -->
+  <mat-sidenav mode="side" opened class="navbar-nav">
+
+    <img routerLink="" class="logo mat-elevation-z8" src="../assets/Bliss Parfum Icon.png" />
+
+    <mat-divider></mat-divider>
+
+
+    <li class="nav-item dropdown">
+      <img class="icone" src="../assets/clientes1.png" alt="">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span>CLIENTES</span>
+      </a>
+      <ul class="dropdown-menu text-center">
+        <li>
+          <span routerLink="/clientes/gerenciador-clientes" class="material-symbols-outlined icones-pequenos mt-2">manage_accounts</span>
+          <a class="dropdown-item" routerLink="/clientes/gerenciador-clientes">Gerenciar Clientes</a>
+        </li>
+        <li>
+          <span routerLink="/clientes/cadastrar-cliente" class="material-symbols-outlined icones-pequenos mt-2">person_add</span>
+          <a class="dropdown-item" routerLink="/clientes/cadastrar-cliente">Novo Cliente</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+      <img class="icone" src="../assets/produtos1.png" alt="">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        PRODUTOS
+      </a>
+      <ul class="dropdown-menu  text-center">
+        <li>
+          <span routerLink="/produtos/gerenciador-produtos" class="material-symbols-outlined icones-pequenos mt-2">store</span>
+          <a class="dropdown-item" routerLink="/produtos/gerenciador-produtos">Gerenciar Produtos</a>
+        </li>
+        <li>
+          <span routerLink="/produtos/cadastrar-produto" class="material-symbols-outlined icones-pequenos mt-2">add_to_queue</span>
+          <a class="dropdown-item" routerLink="/produtos/cadastrar-produto">Novo Produto</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+      <img class="icone" src="../assets/pedidos5.png" alt="">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        PEDIDOS
+      </a>
+      <ul class="dropdown-menu  text-center">
+        <li>
+          <span routerLink="/pedidos/gerenciador-pedidos" class="material-symbols-outlined icones-pequenos mt-2">all_inbox</span>
+          <a class="dropdown-item" routerLink="/pedidos/gerenciador-pedidos">Gerenciar Pedidos</a>
+        </li>
+        <li>
+          <span routerLink="/pedidos/cadastrar-pedido" class="material-symbols-outlined icones-pequenos mt-2">point_of_sale</span>
+          <a class="dropdown-item" routerLink="/pedidos/cadastrar-pedido">Novo Pedido</a>
+        </li>
+      </ul>
+    </li>
+
+    <mat-divider></mat-divider>
+
+  </mat-sidenav>
+
+  <!-- OUTLET -->
+  <mat-sidenav-content>
+    <div class="conteudo">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- FOOTER -->
+
+    <div class="row text-end footer">
+      
+      <div class="col d-flex justify-content-start align-items-center dev">
+        Desenvolvido por André Luiz Copelli
+        <a href="https://github.com/andrecopelli"><img class="github" src="../assets/github.png" alt=""></a>
+      </div>
+
+      <div class="col dark-button">
+        <span class="dark-text">light</span>
+        <button type="button" (click)="toogle()" class="d-flex align-items-center justify-content-center">
+          <img src="../assets/day-mode.png" class="toogle" alt="mudar o tema do site para modo escuro ou claro">
+        </button>
+        <span class="dark-text">dark</span>
+      </div>
+
+      <div class="col relogio">
+        <div class="dia col-auto">
+          <div class="dia">{{dia}}</div>
+        </div>
+        <div class="tempo col-auto d-flex justify-content-end">
+          <div class="hora"> {{hora}}:</div>
+          <div class="minuto"> {{minuto}}:</div>
+          <div class="segundo">{{segundo}}</div>
+        </div>
+      </div>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

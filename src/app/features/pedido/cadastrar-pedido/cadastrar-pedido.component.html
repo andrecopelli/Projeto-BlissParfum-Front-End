@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">point_of_sale</span>
+            <h2>Cadastrar Pedido</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col formulario">
+            <form [formGroup]="form" (ngSubmit)="salvar()">
+                <div class="col">
+
+                    <div class="form-group mb-3">
+                        <label for="cpf" class="form-label">Cpf do Cliente (Opcional)</label>
+                        <input type="text" class="form-control" formControlName="cpf" id="cpf" autocomplete="off">
+                    </div>
+                    <div class="alert alert-danger mt-3" [hidden]="form.get('cpf')?.valid">
+                        <span *ngIf="form.get('cpf')?.errors?.['pattern']">O CPF precisa ser preenchido com 11 números.</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="produto" class="form-label">Produto</label>
+                        <select class="form-select" name="produto" id="produto" formControlName="produto">
+                            <option *ngFor="let produto of produtos" [ngValue]="produto.idProduto">{{produto.nome}} - {{produto.descricao}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="quantidade" class="form-label mt-3">Quantidade</label>
+                        <input type="number" class="form-control" formControlName="quantidade" id="quantidade" autocomplete="off" max="{{produto.estoque}}">
+                    </div>
+                    <div class="alert alert-danger mt-3" [hidden]="form.get('quantidade')?.valid || form.get('quantidade')?.pristine">
+                        <span *ngIf="form.get('quantidade')?.errors?.['required']">A quantidade do produto deve ser preenchida.</span>
+                        <span *ngIf="form.get('quantidade')?.errors?.['min']">O quantidade mínima é de 1 produto.</span>
+                        <span *ngIf="form.get('quantidade')?.errors?.['max']">A quantidade não pode ser maior que a quantidade de produtos em estoque!<br>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="botao m-3">
+                    <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="!form.valid">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

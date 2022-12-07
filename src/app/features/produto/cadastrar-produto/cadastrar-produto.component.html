@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">add_to_queue</span>
+            <h2>Cadastrar Produto</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col formulario">
+            <form [formGroup]="form" (ngSubmit)="salvar()">
+
+                <div class="row linha1">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" formControlName="nome" id="nome" autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger mt-3" [hidden]="form.get('nome')?.valid || form.get('nome')?.pristine">
+                            <span *ngIf="form.get('nome')?.errors?.['required']">O nome do produto deve ser preenchido.</span>
+                            <span *ngIf="form.get('nome')?.errors?.['minlength']">O nome do produto deve ter no mínimo 3 caracteres.</span>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input type="text" class="form-control" formControlName="descricao" id="descricao" autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger mt-3" [hidden]="form.get('descricao')?.valid || form.get('descricao')?.pristine">
+                            <span *ngIf="form.get('descricao')?.errors?.['required']">O nome do produto deve ser preenchido.</span>
+                            <span *ngIf="form.get('descricao')?.errors?.['minlength']">O nome do produto deve ter no mínimo 3 caracteres.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row linha2">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="volume" class="form-label mt-3">Volume ml</label>
+                            <input type="number" class="form-control" formControlName="volume" id="volume" autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger" [hidden]="form.get('volume')?.valid || form.get('volume')?.pristine">
+                            <span *ngIf="form.get('volume')?.errors?.['required']">O volume do produto deve ser preenchido.</span>
+                            <span *ngIf="form.get('volume')?.errors?.['min']">O volume deve ter no mínimo 1ml.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="validade" class="form-label  mt-3">Validade</label>
+                            <input type="date" class="form-control" formControlName="validade" id="validade" [min]="dataAtual | date: 'yyyy-MM-dd'">
+                        </div>
+                        <div class="alert alert-danger" [hidden]="form.get('validade')?.valid || form.get('validade')?.pristine">
+                            <span *ngIf="form.get('validade')?.errors?.['required']">A data de validade deve ser preenchida.</span>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="preco" class="form-label mt-3">Preço R$</label>
+                            <input type="number" class="form-control" formControlName="preco" id="preco" autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger" [hidden]="form.get('preco')?.valid || form.get('preco')?.pristine">
+                            <span *ngIf="form.get('preco')?.errors?.['required']">O preço do produto deve ser preenchido.</span>
+                            <span *ngIf="form.get('preco')?.errors?.['min']">O preço deve ser no mínimo R$ 1,00.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botao m-3">
+                    <input type="submit" value="Salvar" class="btn btn-primary" [disabled]="!form.valid">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

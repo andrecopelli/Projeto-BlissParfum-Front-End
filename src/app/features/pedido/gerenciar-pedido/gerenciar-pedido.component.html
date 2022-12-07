@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">all_inbox</span>
+            <h2>Gerenciar Pedidos</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Data do Pedido</th>
+                        <th>Valor do Pedido</th>
+                        <th>Status</th>
+                        <th>Excluir Pedido</th>
+                        <th>Acompanhar Pedido</th>
+                        <th>Atualizar Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                        <td>{{pedido.idPedido}}</td>
+                        <td>{{pedido.cliente.nome == '' ? 'Cliente não cadastrado' : pedido.cliente.nome}}</td>
+                        <td>{{pedido.produto.nome}}</td>
+                        <td>{{pedido.quantidade}}</td>
+                        <td>{{pedido.dataPedido   | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{pedido.valorTotal}}</td>
+                        <td>{{pedido.status}}</td>                        
+                        <td><button><img *ngIf="pedido.status !== 'Finalizado'" class="botao" src="../../../../assets/delete.png" alt="Botão para excluir o pedido" (click)="excluir(pedido.idPedido)"></button></td>
+                        <td><button><img class="botao" src="../../../../assets/acompanhar.png" alt="Botão para acompanhar o status do pedido" (click)="acompanharPedido(pedido.idPedido)"></button></td>
+                        <td><button><img *ngIf="pedido.status !== 'Finalizado'" class="botao" src="../../../../assets/update.png" alt="Botão para atualizar o status do pedido" (click)="gerenciarStatus(pedido.idPedido)"></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

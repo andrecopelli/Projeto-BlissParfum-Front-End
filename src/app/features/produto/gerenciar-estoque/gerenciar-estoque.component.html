@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col  mb-5">
+            <span class="material-symbols-outlined icone mt-2">inventory</span>
+            <h1>Gerenciar Estoque</h1>
+        </div>
+    </div>
+    <div class="row text-center d-flex justify-content-center">
+        <div class="col info-card">
+            <h3>Produto: {{produto.nome}} - {{produto.descricao}}</h3>
+            <h3>Estoque atual: {{produto.estoque}} unidades</h3>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col">
+            <div class="text-center">
+                <h2>Entrada de produtos no estoque</h2>
+                <img class="icone-estoque" src="../../../../assets/estoque-mais.png" alt="ícone indicando entrada de produtos no estoque">
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-around">
+        <div class="col-5 formulario d-flex justify-content-center text-center">
+            <form [formGroup]="form" (ngSubmit)="entradaEstoque()">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="estoque" class="form-label">Quantidade</label>
+                            <input type="number" class="form-control" formControlName="estoque" id="estoque" autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger mt-3" [hidden]="form.get('estoque')?.valid || form.get('estoque')?.pristine">
+                            <span *ngIf="form.get('estoque')?.errors?.['required']">A quantidade do produto deve ser preenchida.</span>
+                            <span *ngIf="form.get('estoque')?.errors?.['min']">O quantidade mínima é de 1 produto.</span>
+                        </div>
+                        <div class="botao">
+                            <input type="submit" value="+ Adicionar" class="btn btn-primary" [disabled]="!form.valid">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+mat-toolbar{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: 55px;
+    box-shadow: 0px 8px 5px rgb(85, 85, 85);
+    display: flex;
+    justify-content: center;
+}
+
+.texto-logo{
+    cursor: pointer;
+    color: var(--text-color);
+    transition: 0.5s ease-in-out;
+}
+
+.texto-logo:hover{
+    color: #E7BD71;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 250px;
+    border-right: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 1px 8px 8px rgb(85, 85, 85);
+}
+
+.conteudo{
+    box-shadow: 1px 8px 8px rgb(85, 85, 85);
+    border-radius: 10px;
+    height: calc(100vh - 200px);
+    margin: 16px;
+    margin-left: 32px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-y: auto;
+}
+
+mat-sidenav-container{
+    height: calc(100vh - 65px);
+    margin-top: 10px;
+}
+
+.logo{
+    border-radius: 100px;
+    height: 150px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 5px 8px 5px black;
+    transition: 0.5s ease-in-out;
+}
+
+.logo:hover{
+    transform: translateY(-3px) scale(1.08);
+}
+
+.nav-item{
+    padding: 10px;
+    margin: 10px;
+    transition: 1s ease-in-out;
+}
+
+.nav-item:hover{
+    background-color: var(--hover-color);
+    color: var(--hover-text);
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+
+.icone{
+    width: 80px;
+}
+
+
+.icones-pequenos{
+    color: black;
+    font-size: 30px;
+}
+
+mat-divider{
+    background-color: #E7BD71;
+}
+
+.footer{
+    height:85px;
+    box-shadow: 1px 8px 8px rgb(85, 85, 85);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dev{
+    font-size: 15px;
+}
+
+
+.github{
+    height: 60px;
+    margin-left: 15px;
+    transition: 0.5s ease-in-out;
+    border-radius: 100px;
+    opacity: 0.9;
+}
+
+.github:hover{
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 3px 10px 8px rgb(14, 14, 14);
+    opacity: 1;
+}
+
+.toogle{
+    height: 55px;
+}
+
+button{
+    border-radius: 23px;
+    transition: 0.5s ease-in-out;
+    border: none;
+    height: 21px;
+    width: 40px;
+}
+
+button:hover{
+    transform: translateY(-3px) scale(1.2);
+    box-shadow: 3px 10px 8px rgb(14, 14, 14);
+    cursor: pointer;
+}
+
+.dark-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dark-text{
+    font-size: 20px;
+    font-weight: 200;
+    padding: 15px;
+}
+
+.home{
+    width: 40px;
+    margin: 10px;
+}

@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <span class="material-symbols-outlined icone mt-2">store</span>
+            <h2>Gerenciar Produtos</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Volume</th>
+                        <th>Validade</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Ativo</th>
+                        <th>Editar Produto</th>
+                        <th>Ativar Produto</th>
+                        <th>Desativar Produto</th>
+                        <th>Gerenciar Estoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of produtos">
+                        <td>{{produto.idProduto}}</td>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.descricao}}</td>
+                        <td>{{produto.volume}} &nbsp;ml</td>
+                        <td>{{produto.validade | date: 'dd/MM/yyyy'}}</td>
+                        <td>R$ &nbsp;{{produto.preco}}</td>
+                        <td>{{produto.estoque}}</td>
+                        <td>{{true == produto.estaAtivo ? 'Sim' : 'Não' }}</td>
+                        <td><button><img class="botao" src="../../../../assets/edit.png" alt="Botão para editar o produto" (click)="editar(produto.idProduto)"></button></td>
+                        <td><button><img class="botao" src="../../../../assets/ligar.png" alt="Botão para ativar o produto" (click)="ativar(produto.idProduto)"></button></td>
+                        <td><button><img class="botao" src="../../../../assets/desligar.png" alt="Botão para desativar o produto" (click)="desativar(produto.idProduto)"></button></td>
+                        <td><button><img *ngIf="produto.estaAtivo" class="botao" src="../../../../assets/estoque3.png" alt="Botão para desativar o produto" (click)="gerenciarEstoque(produto.idProduto)"></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

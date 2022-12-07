@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files 
+
+Cor secubdária: #E7BD71
+Cor terciária: #2F4F4E
+
+*/
+:root .light-theme{
+    --background-color: #fde1bc;
+    --text-color: rgb(27, 27, 27);
+    --button-color: #FAEBD7;
+    --secondary-color: #E7BD71;
+    --hover-color: #E7BD71;
+    --hover-text: #FAEBD7;
+}
+
+:root{
+    --background-color: rgb(27, 27, 27);
+    --text-color: #FAEBD7;
+    --button-color: rgb(27, 27, 27);
+    --secondary-color: #E7BD71;
+    --hover-color: rgb(54, 54, 54);
+    --hover-text: #E7BD71;
+}
+
+
+html, body { height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
