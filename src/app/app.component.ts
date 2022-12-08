@@ -1,3 +1,4 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ɵInjectableAnimationEngine } from '@angular/platform-browser/animations';
 import { ClienteService } from './features/cliente/cliente.service';
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit {
   public minuto: string = '';
   public segundo: string = '';
   public dia: string = '';
-
+  public toggleButton = document.getElementById('floating-toggle');
+  
   
   constructor() {
     
